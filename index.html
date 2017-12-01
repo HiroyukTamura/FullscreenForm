@@ -23,31 +23,37 @@
 				<div class="fs-title">
 					<h1>Project Worksheet</h1>
 					<div class="codrops-top">
-						<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/NotificationStyles/"><span>Previous Demo</span></a>
-						<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19520"><span>Back to the Codrops Article</span></a>
-						<a class="codrops-icon codrops-icon-info" href="#"><span>This is a demo for a fullscreen form</span></a>
+						<!--<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/NotificationStyles/"><span>ふがふがふが</span></a>-->
+						<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19520"><span>プライバシーポリシー</span></a>
+						<a class="codrops-icon codrops-icon-info" href="#"><span>てってれー！！ふがふがふら</span></a>
 					</div>
 				</div>
 				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
 					<ol class="fs-fields">
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q1">あなたの名前</label>
-							<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Dean Moriarty" required/>
+							<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="ex 山田太郎"/>
 						</li>
 
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q1">病名</label>
-							<input class="fs-anim-lower" id="q1_extra1" name="q1_extra1" type="text" placeholder="Dean Moriarty" required/>
+							<input class="fs-anim-lower" id="q1_extra1" name="q1_extra1" type="text" placeholder="ex 躁うつ病"/>
 						</li>
 
 						<li>
-							<label class="fs-field-label fs-anim-upper" for="q4">簡単な病気の説明</label>
-							<input class="fs-anim-lower" id="q4_extra5" name="q4_extra5" type="text" placeholder="Dean Moriarty" required/>
+							<label class="fs-field-label fs-anim-upper" for="q4" >病気の概要</label>
+							<textarea class="fs-anim-lower" id="q4_extra6" name="q4_extra6" placeholder="不注意や勘違いを多く起こします。
+また、数日から数週間のスパンで気分が上下動します。"></textarea>
 						</li>
 
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q4" >症状の内容</label>
-							<textarea class="fs-anim-lower" id="q4_extra2" name="q4_extra2" placeholder="Describe here"></textarea>
+							<textarea class="fs-anim-lower" id="q4_extra2" name="q4_extra2" placeholder="<注意力>
+日常的に不注意が多く、特に状態が優れないときやプレッシャーがかかった状態では著しく多くなります。
+また、物事に熱中しやすく、まわりが見えなくなることがあります。
+
+<気分>
+プレッシャーに弱く、しばしば強迫的に物事を考えてしまい、小さなきっかけで気分が落ち込むことがあります。"></textarea>
 						</li>
 
 						<li>
@@ -119,27 +125,15 @@
 							<!--<input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1000" step="100" min="100"/>-->
 						<!--</li>-->
 					</ol><!-- /fs-fields -->
-					<button class="fs-submit" type="submit">Send answers</button>
+					<button class="fs-submit" type="submit" id="make_book">作成</button>
 				</form><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
-
-			<!-- Related demos -->
-			<div class="related">
-				<p>If you enjoyed this demo you might also like:</p>
-				<a href="http://tympanus.net/Development/MinimalForm/">
-					<img src="img/relatedposts/minimalform1-300x162.png" />
-					<h3>Minimal Form Interface</h3>
-				</a>
-				<a href="http://tympanus.net/Development/ButtonComponentMorph/">
-					<img src="img/relatedposts/MorphingButtons-300x162.png" />
-					<h3>Morphing Buttons Concept</h3>
-				</a>
-			</div>
 
 		</div><!-- /container -->
 		<script src="js/classie.js"></script>
 		<script src="js/selectFx.js"></script>
 		<script src="js/fullscreenForm.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script>
 			(function() {
 				var formWrap = document.getElementById( 'fs-form-wrap' );
@@ -158,6 +152,50 @@
 						classie.add( document.body, 'overview' ); // for demo purposes only
 					}
 				} );
+
+                const button = document.getElementById("make_book");
+                var vals = [];
+                button.onclick = function () {
+                    for(var i=0; i<document.getElementsByClassName('fs-anim-lower').length; i++){
+                        var value = document.getElementsByClassName('fs-anim-lower')[i].value;
+                        vals.push(value);
+                    }
+
+                    $.ajax({
+                        type : 'post',
+                        url : 'https://qiita.com/takeharu/items/d75f96f81ff83680013f',
+                        data : JSON.stringify(vals),
+                        contentType: 'application/JSON',
+                        dataType : 'JSON',
+                        scriptCharset: 'utf-8',
+                        success : function(data) {
+                            // Success
+                            alert("success");
+                        },
+                        error : function(XMLHttpRequest, textStatus, errorThrown) {
+                            // Error
+                            alert("処理に失敗しました" + XMLHttpRequest.status);
+                        }
+                    });
+
+                    alert("ここ");
+
+//                    // フォームタグを生成
+//                    var form = document.createElement('form');
+//                    form.method = 'POST';
+//                    form.action = 'http://xxx.com/';
+//                    var reqElm = document.createElement('input');
+//                    for (var e=0; e<vals.length; e++){
+//                        reqElm.name = e;
+//                        reqElm.value = vals[e];
+//					}
+//                    form.appendChild(reqElm);
+//                    document.body.appendChild(form);
+//                    form.submit();
+//                    form.parentNode.removeChild(form);
+//
+//                    alert("good job");
+                };
 			})();
 		</script>
 	</body>

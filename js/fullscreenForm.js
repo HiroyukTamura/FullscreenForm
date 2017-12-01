@@ -294,6 +294,12 @@
 					classie.remove( self.formEl, 'fs-form-full' );
 					classie.add( self.formEl, 'fs-form-overview' );
 					classie.add( self.formEl, 'fs-show' );
+
+                    const form = document.getElementById('myform');
+					for(var i=0; i<form.length; i++){
+						form.getElementsByClassName('fs-anim-lower')[i].placeholder = "";
+					}
+
 					// callback
 					self.options.onReview();
 				}
@@ -407,7 +413,7 @@
 		if( !input ) return true;
 
 		switch( input.tagName.toLowerCase() ) {
-			case 'input' : 
+			case 'input' :
 				if( input.type === 'radio' || input.type === 'checkbox' ) {
 					var checked = 0;
 					[].slice.call( fld.querySelectorAll( 'input[type="' + input.type + '"]' ) ).forEach( function( inp ) {
@@ -450,10 +456,10 @@
 	FForm.prototype._showError = function( err ) {
 		var message = '';
 		switch( err ) {
-			case 'NOVAL' : 
-				message = 'Please fill the field before continuing';
+			case 'NOVAL' :
+				message = '内容を入力してください';
 				break;
-			case 'INVALIDEMAIL' : 
+			case 'INVALIDEMAIL' :
 				message = 'Please fill a valid email address';
 				break;
 			// ...
