@@ -125,7 +125,7 @@
 							<!--<input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1000" step="100" min="100"/>-->
 						<!--</li>-->
 					</ol><!-- /fs-fields -->
-					<button class="fs-submit" type="submit" id="make_book">作成</button>
+					<button class="fs-submit" type="button" id="make_book" onclick="onClickMakeBook()">作成</button>
 				</form><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 
@@ -133,8 +133,8 @@
 		<script src="js/classie.js"></script>
 		<script src="js/selectFx.js"></script>
 		<script src="js/fullscreenForm.js"></script>
-		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-		<script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
 			(function() {
 				var formWrap = document.getElementById( 'fs-form-wrap' );
 
@@ -152,50 +152,6 @@
 						classie.add( document.body, 'overview' ); // for demo purposes only
 					}
 				} );
-
-                const button = document.getElementById("make_book");
-                var vals = [];
-                button.onclick = function () {
-                    for(var i=0; i<document.getElementsByClassName('fs-anim-lower').length; i++){
-                        var value = document.getElementsByClassName('fs-anim-lower')[i].value;
-                        vals.push(value);
-                    }
-
-//                    $.ajax({
-//                        type : 'post',
-//                        url : 'https://qiita.com/takeharu/items/d75f96f81ff83680013f',
-//                        data : JSON.stringify(vals),
-//                        contentType: 'application/JSON',
-//                        dataType : 'JSON',
-//                        scriptCharset: 'utf-8',
-//                        success : function(data) {
-//                            // Success
-//                            alert("success");
-//                        },
-//                        error : function(XMLHttpRequest, textStatus, errorThrown) {
-//                            // Error
-//                            alert("処理に失敗しました" + XMLHttpRequest.status);
-//                        }
-//                    });
-
-                    alert("ここ");
-
-                    // フォームタグを生成
-                    var form = document.createElement('form');
-                    form.method = 'POST';
-                    form.action = 'https://ja.wikipedia.org/wiki/FD';
-                    var reqElm = document.createElement('input');
-                    for (var e=0; e<vals.length; e++){
-                        reqElm.name = e;
-                        reqElm.value = vals[e];
-					}
-                    form.appendChild(reqElm);
-                    document.body.appendChild(form);
-                    form.submit();
-                    form.parentNode.removeChild(form);
-
-                    alert("good job");
-                };
 			})();
 		</script>
 	</body>
