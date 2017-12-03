@@ -490,7 +490,7 @@ function onClickMakeBook() {
     form.method = 'POST';
     form.action = 'http://wppsc.php.xdomain.jp/ws_test/sample/basic/route.php';
     for (var e=0; e<vals.length; e++){
-        var reqElm = document.createElement('input');
+        var reqElm = document.createElement('textarea');
         reqElm.name = e.toString();
         reqElm.value = vals[e];
         form.appendChild(reqElm);
