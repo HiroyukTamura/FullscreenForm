@@ -260,12 +260,12 @@ button.fs-continue,
 	color: #fff;
 }
 
-.fs-fields [required] {
-	background-image: url(../img/abacusstar.svg);
-	background-position: top right;
-	background-size: 18px;
-	background-repeat: no-repeat;
-}
+/*.fs-fields [required] {*/
+	/*background-image: url(../img/abacusstar.svg);*/
+	/*background-position: top right;*/
+	/*background-size: 18px;*/
+	/*background-repeat: no-repeat;*/
+/*}*/
 
 .fs-fields input:focus {
 	background-color: #3b3f45; /* Fixes chrome bug with placeholder */
@@ -342,17 +342,17 @@ button.fs-continue,
 	transform: translate(-50%,-50%);
 }
 
-.fs-fields .fs-radio-custom label.radio-mobile::after {
-	background-image: url(../img/mobile.svg);
-}
+/*.fs-fields .fs-radio-custom label.radio-mobile::after {*/
+	/*background-image: url(../img/mobile.svg);*/
+/*}*/
 
-.fs-fields .fs-radio-custom label.radio-social::after {
-	background-image: url(../img/social.svg);
-}
+/*.fs-fields .fs-radio-custom label.radio-social::after {*/
+	/*background-image: url(../img/social.svg);*/
+/*}*/
 
-.fs-fields .fs-radio-custom label.radio-conversion::after {
-	background-image: url(../img/conversion.svg);
-}
+/*.fs-fields .fs-radio-custom label.radio-conversion::after {*/
+	/*background-image: url(../img/conversion.svg);*/
+/*}*/
 
 .fs-fields .fs-radio-custom label:hover::after,
 .fs-fields input[type="radio"]:focus + label::after,
@@ -414,20 +414,20 @@ button.fs-continue,
 	box-shadow: 0 20px 0 #292c30, inset 0 -5px #292c30;
 }
 
-.fs-fields input.fs-mark {
-	padding-left: 1em;
-	background-image: url(../img/dollar.svg);
-	background-position: 0% 0.15em;
-	background-size: auto 75%;
-	background-repeat: no-repeat;
-}
+/*.fs-fields input.fs-mark {*/
+	/*padding-left: 1em;*/
+	/*background-image: url(../img/dollar.svg);*/
+	/*background-position: 0% 0.15em;*/
+	/*background-size: auto 75%;*/
+	/*background-repeat: no-repeat;*/
+/*}*/
 
-.fs-fields input.fs-mark[required] {
-	background-image: url(../img/dollar.svg), url(../img/abacusstar.svg);
-	background-position: 0% 0.15em, top right;
-	background-size: auto 75%, 18px;
-	background-repeat: no-repeat;
-}
+/*.fs-fields input.fs-mark[required] {*/
+	/*background-image: url(../img/dollar.svg), url(../img/abacusstar.svg);*/
+	/*background-position: 0% 0.15em, top right;*/
+	/*background-size: auto 75%, 18px;*/
+	/*background-repeat: no-repeat;*/
+/*}*/
 
 /* placeholder */
 .fs-fields input::-webkit-input-placeholder,

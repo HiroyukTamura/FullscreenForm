@@ -551,3 +551,7 @@ function avoidNull(string) {
 		return string;
 	}
 }
+
+function onClickInfo() {
+
+}
