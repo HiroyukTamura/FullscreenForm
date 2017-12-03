@@ -497,7 +497,7 @@ function onClickMakeBook() {
     var key = ref.getKey();
 
 	writeFb(key).then(function (value2) {
-        window.location.href = 'http://wppsc.php.xdomain.jp/ws_test/sample/basic/route.php' +'?'+ key;
+        window.location.href = 'http://wppsc.php.xdomain.jp/ws_test/sample/basic/route.php' +'?key='+ key;
     });
 
     // var vals = [];
@@ -522,20 +522,24 @@ function onClickMakeBook() {
 }
 
 function writeFb(key) {
-    var anmis = document.getElementsByClassName('fs-anim-lower');
+    var anims = document.getElementsByClassName('fs-anim-lower');
+
+    var date = new Date();
+    var dateStr = date.getFullYear() +''+ date.getMonth()+1 + '' + date.getDate();
 
     var params = {
         'name': avoidNull(anims[0].value),
         'aboutDisease': avoidNull(anims[1].value),
         'detailDisease': avoidNull(anims[2].value),
         'consideration': avoidNull(anims[3].value),
-        'aboutMe': avoidNull(anmis[4].value),
-        'msg': avoidNull(anmis[5].value)
+        'aboutMe': avoidNull(anims[4].value),
+        'msg': avoidNull(anims[5].value),
+        'date': dateStr
     };
 
     var updates = {};
     updates['/bookKeys/' + key] = key;
-    updates['/book'] = params;
+    updates['/books/'+ key] = params;
 
     return firebase.database().ref().update(updates);
 }
