@@ -104,6 +104,8 @@
 		
 		// init events
 		this._initEvents();
+
+        initFirebase();
 	};
 
 	/**
@@ -478,24 +480,70 @@
 
 })( window );
 
+function initFirebase() {
+    var config = {
+        apiKey: "AIzaSyBQnxP9d4R40iogM5CP0_HVbULRxoD2_JM",
+        authDomain: "wordsupport3.firebaseapp.com",
+        databaseURL: "https://wordsupport3.firebaseio.com",
+        projectId: "wordsupport3",
+        storageBucket: "wordsupport3.appspot.com",
+        messagingSenderId: "60633268871"
+    };
+    firebase.initializeApp(config);
+}
+
 function onClickMakeBook() {
-    var vals = [];
-    for(var i=0; i<document.getElementsByClassName('fs-anim-lower').length; i++){
-        var value = document.getElementsByClassName('fs-anim-lower')[i].value;
-        vals.push(value);
-    }
+    var ref = firebase.database().ref('/bookKeys').push();
+    var key = ref.getKey();
+
+	writeFb(key).then(function (value2) {
+        window.location.href = 'http://wppsc.php.xdomain.jp/ws_test/sample/basic/route.php' +'?'+ key;
+    });
+
+    // var vals = [];
+    // for(var i=0; i<document.getElementsByClassName('fs-anim-lower').length; i++){
+    //     var value = document.getElementsByClassName('fs-anim-lower')[i].value;
+    //     vals.push(value);
+    // }
 
     // フォームタグを生成
-    var form = document.createElement('form');
-    form.method = 'POST';
-    form.action = 'http://wppsc.php.xdomain.jp/ws_test/sample/basic/route.php';
-    for (var e=0; e<vals.length; e++){
-        var reqElm = document.createElement('textarea');
-        reqElm.name = e.toString();
-        reqElm.value = vals[e];
-        form.appendChild(reqElm);
-    }
-    document.body.appendChild(form);
-    form.submit();
-    form.parentNode.removeChild(form);
+    // var form = document.createElement('form');
+    // form.method = 'POST';
+    // form.action = 'http://wppsc.php.xdomain.jp/ws_test/sample/basic/route.php' +'?'+ key;
+    // for (var e=0; e<vals.length; e++){
+    //     var reqElm = document.createElement('textarea');
+    //     reqElm.name = e.toString();
+    //     reqElm.value = vals[e];
+    //     form.appendChild(reqElm);
+    // }
+    // document.body.appendChild(form);
+    // form.submit();
+    // form.parentNode.removeChild(form);
+}
+
+function writeFb(key) {
+    var anmis = document.getElementsByClassName('fs-anim-lower');
+
+    var params = {
+        'name': avoidNull(anims[0].value),
+        'aboutDisease': avoidNull(anims[1].value),
+        'detailDisease': avoidNull(anims[2].value),
+        'consideration': avoidNull(anims[3].value),
+        'aboutMe': avoidNull(anmis[4].value),
+        'msg': avoidNull(anmis[5].value)
+    };
+
+    var updates = {};
+    updates['/bookKeys/' + key] = key;
+    updates['/book'] = params;
+
+    return firebase.database().ref().update(updates);
+}
+
+function avoidNull(string) {
+	if(!string){
+		return "";
+	} else {
+		return string;
+	}
 }
