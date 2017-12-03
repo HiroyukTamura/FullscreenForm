@@ -488,13 +488,13 @@ function onClickMakeBook() {
     // フォームタグを生成
     var form = document.createElement('form');
     form.method = 'POST';
-    form.action = 'http://wppsc.php.xdomain.jp/ws_test/main.php';
-    var reqElm = document.createElement('input');
+    form.action = 'http://wppsc.php.xdomain.jp/ws_test/sample/basic/route.php';
     for (var e=0; e<vals.length; e++){
+        var reqElm = document.createElement('input');
         reqElm.name = e.toString();
         reqElm.value = vals[e];
+        form.appendChild(reqElm);
     }
-    form.appendChild(reqElm);
     document.body.appendChild(form);
     form.submit();
     form.parentNode.removeChild(form);
