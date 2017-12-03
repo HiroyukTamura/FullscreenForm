@@ -19,19 +19,28 @@
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>
+
+	<!--**************facebook**************-->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.11';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+	<!--**************facebook**************-->
+
 		<div class="container">
 
 			<div class="fs-form-wrap" id="fs-form-wrap">
 				<div class="fs-title">
-					<h1>トリセツビルダー</h1>
+					<h1>とりせつビルダー</h1>
 					<div class="codrops-top">
-						<!--<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/NotificationStyles/"><span>ふがふがふが</span></a>-->
-						<!--<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19520"><span></span></a>-->
-						<!--<a class="codrops-icon codrops-icon-info" href="#" onclick="onClickInfo()"><span>what's this?</span></a>-->
 						<a class="codrops-icon" href="#"><i class="fa fa-info-circle"><span>what's this?</span></i></a>
-						<a class="codrops-icon" href="#"><i class="fa fa-twitter"><span>twitter</span></i></a>
-						<a class="codrops-icon" href="#"><i class="fa fa-facebook-official"><span>facebook</span></i></a>
-						<a class="codrops-icon" href="#"><i class="fa fa-twitter"><span>twitter</span></i></a>
+						<a class="codrops-icon" href="http://twitter.com/share?url=https://goo.gl/Y9QTCQ&text=【とりせつビルダー】"><i class="fa fa-twitter"><span>twitter</span></i></a>
+						<a class="codrops-icon" href="http://www.facebook.com/plugins/like.php?href=http://wppsc.html.xdomain.jp/ws/public/index.html" ><i class="fa fa-facebook-official"><span>facebook</span></i></a>
+						<a class="codrops-icon" href="http://line.me/R/msg/text/?http://wppsc.html.xdomain.jp/ws/public/index.html"><i class="fa fa-comment" aria-hidden="true"></i><span>line</span></i></a>
 					</div>
 				</div>
 				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
