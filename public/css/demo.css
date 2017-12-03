@@ -64,17 +64,17 @@ a:hover, a:focus {
 	-webkit-font-smoothing: antialiased;
 }
 
-.codrops-icon-drop:before {
-	content: "\e001";
-}
+/*.codrops-icon-drop:before {*/
+	/*content: "\e001";*/
+/*}*/
 
-.codrops-icon-prev:before {
-	content: "\e004";
-}
+/*.codrops-icon-prev:before {*/
+	/*content: "\e004";*/
+/*}*/
 
-.codrops-icon-info:before {
-	content: "\e003";
-}
+/*.codrops-icon-info:before {*/
+	/*content: "\e003";*/
+/*}*/
 
 .codrops-icon span {
 	display: none;

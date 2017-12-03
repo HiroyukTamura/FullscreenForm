@@ -497,7 +497,7 @@ function onClickMakeBook() {
     var key = ref.getKey();
 
 	writeFb(key).then(function (value2) {
-        window.location.href = 'http://wppsc.php.xdomain.jp/ws_test/sample/basic/route.php' +'?key='+ key;
+        window.location.href = 'http://wppsc.php.xdomain.jp/ws_test/sample/basic/index.html' +'?key='+ key;
     });
 
     // var vals = [];
