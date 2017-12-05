@@ -10,6 +10,11 @@
 		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
 }
 
+@font-face {
+	font-family: "CpRevengeFont";
+	src: url('../fonts/cprevenge_tte/CP_Revenge.ttf');
+}
+
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
@@ -132,4 +137,9 @@ a:hover, a:focus {
 	padding: 0.5em 0 0.3em;
 	max-width: 300px;
 	text-align: left;
+}
+
+h1 {
+	font-family: CpRevengeFont;
+	color: #fffed8;
 }
