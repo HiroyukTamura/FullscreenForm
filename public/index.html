@@ -10,7 +10,8 @@
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		<link href="font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/remodal.css">
+		<link rel="stylesheet" href="css/remodal-default-theme.css">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
@@ -20,24 +21,13 @@
 	</head>
 	<body>
 
-	<!--&lt;!&ndash;**************facebook**************&ndash;&gt;-->
-	<!--<div id="fb-root"></div>-->
-	<!--<script>(function(d, s, id) {-->
-        <!--var js, fjs = d.getElementsByTagName(s)[0];-->
-        <!--if (d.getElementById(id)) return;-->
-        <!--js = d.createElement(s); js.id = id;-->
-        <!--js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.11';-->
-        <!--fjs.parentNode.insertBefore(js, fjs);-->
-    <!--}(document, 'script', 'facebook-jssdk'));</script>-->
-	<!--&lt;!&ndash;**************facebook**************&ndash;&gt;-->
-
 		<div class="container">
 
 			<div class="fs-form-wrap" id="fs-form-wrap">
 				<div class="fs-title">
 					<h1>とりせつビルダー</h1>
 					<div class="codrops-top">
-						<a class="codrops-icon" href="#"><i class="fa fa-info-circle"><span>what's this?</span></i></a>
+						<a class="codrops-icon" data-remodal-target="modal" href="#" onclick="showModal()"><i class="fa fa-info-circle"><span>what's this?</span></i></a>
 						<a class="codrops-icon" href="http://twitter.com/share?url=https://goo.gl/Y9QTCQ&text=【とりせつビルダー】"><i class="fa fa-twitter"><span>twitter</span></i></a>
 						<a class="codrops-icon" href="http://www.facebook.com/plugins/like.php?href=http://wppsc.html.xdomain.jp/ws/public/index.html" ><i class="fa fa-facebook-official"><span>facebook</span></i></a>
 						<a class="codrops-icon" href="http://line.me/R/msg/text/?http://wppsc.html.xdomain.jp/ws/public/index.html"><i class="fa fa-comment" aria-hidden="true"><span>line</span></i></a>
@@ -149,12 +139,21 @@
 				</form><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 
+			<div class="remodal" data-remodal-id="modal" id="modal" data-remodal-options="hashTracking:false">
+				<button data-remodal-action="close" class="remodal-close"></button>
+				<h1>タイトル</h1>
+				<p>コンテンツを記述します。</p>
+				<button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+				<button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+			</div>
+
 		</div><!-- /container -->
 
 		<script src="js/classie.js"></script>
 		<script src="js/selectFx.js"></script>
 		<script src="js/fullscreenForm.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="js/remodal.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
 		<script type="text/javascript">

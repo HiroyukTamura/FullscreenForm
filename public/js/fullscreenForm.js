@@ -552,6 +552,6 @@ function avoidNull(string) {
 	}
 }
 
-function onClickInfo() {
-
+function showModal() {
+	document.getElementById('modal').remodal();
 }

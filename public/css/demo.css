@@ -143,3 +143,12 @@ h1 {
 	font-family: CpRevengeFont;
 	color: #fffed8;
 }
+
+.white-popup {
+	position: relative;
+	background: #FFF;
+	padding: 20px;
+	width: auto;
+	max-width: 500px;
+	margin: 20px auto;
+}
