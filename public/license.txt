@@ -6,6 +6,3 @@ License:	CC0 -- http://creativecommons.org/publicdomain/zero/1.0/
 
 font : チェックポイントリベンジ -- http://marusexijaxs.web.fc2.com/quizfont.html#quizfont5
 License: CC BY-ND -- http://creativecommons.org/licenses/by-nd/4.0/deed.ja
-
-url: remodal -- http://vodkabears.github.io/remodal/
-License: MIT -- https://github.com/vodkabears/Remodal/blob/master/LICENSE

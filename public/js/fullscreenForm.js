@@ -551,7 +551,3 @@ function avoidNull(string) {
 		return string;
 	}
 }
-
-function showModal() {
-	document.getElementById('modal').remodal();
-}
