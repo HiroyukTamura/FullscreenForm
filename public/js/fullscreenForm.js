@@ -523,10 +523,9 @@ function onClickMakeBook() {
 
 function writeFb(key) {
     var anims = document.getElementsByClassName('fs-anim-lower');
-
-    var date = new Date();
-    var dateStr = date.getFullYear() +'.'+ date.getMonth()+1 + '.' + date.getDate();
-
+    // var date = new Date();
+    // var dateStr = date.getFullYear() +'.'+ date.getMonth()+1 + '.' + date.getDate();
+	var dateStr = moment().format("YYYY.MM.DD");
     var params = {
         'name': avoidNull(anims[0].value),
         'aboutDisease': avoidNull(anims[1].value),
@@ -550,4 +549,8 @@ function avoidNull(string) {
 	} else {
 		return string;
 	}
+}
+
+function onClickInfo() {
+
 }
